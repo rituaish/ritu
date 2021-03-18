@@ -1,0 +1,2586 @@
+print ('this is a string {}'.format('inserted'))
+print ('this is a string {}'.format('inserted'))
+this is a string inserted
+print ('the {q} {b} {b}' .format(f='fox',b='brown',q='quick'))
+print ('the {q} {b} {b}' .format(f='fox',b='brown',q='quick'))
+the quick brown brown
+
+
+
+print('the result is {r:10.3f}' .format(r=result))   ------.format method (old)
+the result is      1.299
+
+print(f'name is {result}')
+name is 1.2987012987012987    ------formatted string(new)
+
+
+
+lists----------------------------------------
+my_list = [1,2,3]
+_
+my_list
+[1, 2, 3]
+t
+len(my_list)
+3
+,  100 , 109.89
+my = ['string',  100 , 109.89]
+my
+['string', 100, 109.89]
+
+
+slicing of list---------------------------------
+
+my[0]
+'string'
+1:
+my[1:]
+[100, 109.89]
+b
+new = ['a' 'b']
+my + new
+my + new
+['string', 100, 109.89, 'ab']
+
+
+my[0] = 'ALL CAPS'
+my
+my
+['ALL CAPS', 100, 109.89]
+
+
+my.append('six')    ----- append function is used to add an element 
+my
+my
+['ALL CAPS', 100, 109.89, 'six']
+
+
+
+my.pop()      ------pop is used to remove an element from the end of list
+'six' 
+my
+my
+['ALL CAPS', 100, 109.89]
+
+
+popped_item = my.pop()
+popped_item
+popped_item
+109.89
+
+
+my.pop(0)
+'ALL CAPS'
+my
+my
+[100]     ------so we can give and index to pop a specific element
+
+
+ab = ['a' , 'e', 's', 'b']
+6
+bc = ['3', '9' , '2' , '6']
+ab.sort()
+ab
+ab
+['a', 'b', 'e', 's']
+bc.sort()
+bc
+bc
+['2', '3', '6', '9']
+
+
+note that sort method does not receive anything
+notetype is type for none value
+used to return nothing
+
+so .sort is performed in place and doesnot return anything
+
+
+bc.reverse()
+bc
+bc
+['9', '6', '3', '2']
+
+
+
+dictionary ---------------------------------------------
+
+st = {'key1':'1','key2':'2','key3':'3'}
+st
+st
+{'key1': '1', 'key2': '2', 'key3': '3'}
+st['key1']
+'1'
+
+
+d.keys()
+dict_keys(['k1', 'k2', 'k3'])
+d.values()
+dict_values([123, [0, 1, 2], {'k4': 44}])
+d.items()
+dict_items([('k1', 123), ('k2', [0, 1, 2]), ('k3', {'k4': 44})])
+mutable
+
+
+
+tuplesss
+immutable******
+use ()
+
+t = (1,2,3)
+3,5,7
+id = [3,5,7]
+t
+type(t)
+tuple
+id
+type(id)
+list
+t[0]
+1
+-1
+t[-1]
+3
+b
+t = ('a', 'a' , 'b')
+a
+t.count('a')
+2
+a
+t.index('a')
+0
+
+id[1] = 'abc'
+ = 5
+t[1] = 5
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-96-c53026d12066> in <module>
+----> 1 t[1] = 5
+
+TypeError: 'tuple' object does not support item assignment
+
+
+its really useful when elements should not change in future, otherwise its same as list
+
+
+
+set --------------------------------
+myset = set()
+myset
+myset
+set()
+1
+myset.add(1)
+myset
+myset
+{1}
+.add
+myset.add(2)
+myset
+myset
+{1, 2}
+2
+myset.add(2)
+myset
+myset
+{1, 2}
+
+it basically retains only unique values and they are unordered
+used to cast a list into a set of unique values which is unorered
+
+
+
+boolean-----
+use capital first letter for true and false
+True
+True
+False
+type(False)
+bool
+True , False , None
+none is a null datatype
+
+%%writefile myfileaan.txt
+Hello this is a text file and this only works with jupiter notebook
+Writing myfileaan.txt
+'
+myfile = open('myfileaan.txt')
+myfile
+myfile
+<_io.TextIOWrapper name='myfileaan.txt' mode='r' encoding='cp1252'>
+pwd
+pwd
+'C:\\Users\\Ankur Arjun Nagpal\\Desktop\\html pages'
+'
+myfile = open('myfileaan.txt')
+myfile
+myfile
+<_io.TextIOWrapper name='myfileaan.txt' mode='r' encoding='cp1252'>
+myfile.read()
+'Hello this is a text file and this only works with jupiter notebook\n'
+myfile.read()
+''
+
+
+now second time when we read the filee itll show as empty
+that is because the cursor is at the end of the text and it tries to read from there
+now inorder to go back to the beginning we should use myfile.seek(0)
+
+myfile.seek(0)
+0
+myfile.read()
+'Hello this is a text file and this only works with jupiter notebook\n'
+
+myfile.seek(0)
+0
+myfile.readlines()
+['Hello this is a text file and this only works with jupiter notebook\n']
+
+this function is used to read the text in the form of a list which can be used later for looping
+myfile.close()
+
+
+file location------------------
+to open a text file in other location in the pc
+to open give full file path
+myfile = open("C:\\Users\\Ankur Arjun Nagpal")
+
+
+with open('myfileaan.txt') as my_new_file:
+    contents = my_new_file.read()
+contents
+contents
+'Hello this is a text file and this only works with jupiter notebook\n'
+
+
+hence this is mainly used so that we will not get an error if we donot close the file using close, this with command and assignment will directly store data in variable
+
+
+with open('myfileaan.txt',mode='w') as myfile:
+    contents = myfile.read()
+---------------------------------------------------------------------------
+UnsupportedOperation                      Traceback (most recent call last)
+<ipython-input-139-51d100e34ef0> in <module>
+      1 with open('myfileaan.txt',mode='w') as myfile:
+----> 2     contents = myfile.read()
+
+UnsupportedOperation: not readable
+
+
+so we dont have write permission, rwa just like unix
+
+
+Writing myf.txt
+with open('myf.txt',mode='a') as f:
+    f.write('FOUR')
+
+
+with open('myf.txt',mode='r') as f:
+    print(f.read())
+ONE
+TWO
+THREE
+FOUR
+
+
+appending will add at the end, w will rewrite the document
+
+the below command will create a file if its not already present
+
+with open('adkhjsaafb.txt',mode='w') as ff:
+    ff.write('my name is ankur')
+
+with open('adkhjsaafb.txt') as ff:
+    print(ff.read())
+my name is ankur
+
+
+
+comparison operators
+==
+>
+<
+>=
+<=
+'hello' == 'Hello'
+false
+2.0 == 2
+True
+!=
+
+logical operator
+and 
+not 
+or
+1 < 2 < 3
+True
+
+
+
+
+if else elif-----------------
+
+if condition:
+	#execute statement
+elif:
+	#something
+else:
+	#execute something else
+
+
+if True:
+    print('its true')
+its true
+its true
+if 3>2:
+    print('its true')
+its true
+---------------------------
+if 3<2:
+    print('true')
+else:
+    print('false')
+false
+
+loc = 'bank'
+if loc == 'auto':
+    print('cars are cool')
+elif loc =='shop':
+    print('shop is awesome')
+elif loc=='bank':
+    print('yes bank')
+else:
+    print("i dont know loc")
+
+yes bank
+
+
+-------------------------
+iterable means perform an action for every element in a object
+iterate over item in list, string, dictionary
+
+for loop-------
+myn = [1,2,3]
+for item in myn:
+    print(item)
+1
+2
+3
+
+
+
+for num in gam:
+    if num%2 == 0:
+        print (f'EVEN {num}')
+    else:
+        print(f'False {num}')
+False 1
+EVEN 2
+False 3
+EVEN 4
+False 5
+EVEN 6
+False 7
+EVEN 8
+False 9
+EVEN 10
+
+
+instead of a variable in for loop we can also use an _
+
+
+ma = [(1,2),(2,3),(4,5)]
+ma
+for item in ma:
+    print(ma)
+[(1, 2), (2, 3), (4, 5)]
+[(1, 2), (2, 3), (4, 5)]
+[(1, 2), (2, 3), (4, 5)]
+
+for (a,b) in ma:
+    print(a)
+1
+2
+4
+
+this is tuple unpacking
+
+for item in l.values():
+    print(item)
+1
+2
+3
+
+for item in l.items():
+    print(item)
+('key1', 1)
+('key2', 2)
+('key3', 3)
+
+for a,b in l.items():
+    print(a)
+key1
+key2
+key3
+
+
+
+while----------
+
+x=0
+while x<5:
+    print(f'the value of x is {x}')
+    x=x +1
+the value of x is 0
+the value of x is 1
+the value of x is 2
+the value of x is 3
+the value of x is 4
+
+
+x=0
+while x<5:
+    print(f'the value of x is {x}')
+    x=x +1
+else:
+    print('x is not less than 5')
+the value of x is 0
+the value of x is 1
+the value of x is 2
+the value of x is 3
+the value of x is 4
+x is not less than 5
+
+
+three keywordss---
+break
+continue---continue to next loop
+pass---does nothing
+
+
+
+pass is mainly used when for an iteration you donot need to do anything, if you just give a comment it will lot work out and you will get
+syntax error, so better use pass
+
+x=[1,2,3]
+for item in x;
+	#comment
+o/p error
+
+
+x=[1,2,3]
+for item in x;
+	#comment
+	pass
+
+o/p : no error
+
+
+
+operators in python-------
+
+range(start,stop,step)
+
+for item in range(10):
+    print(item)
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+for item in range(2,10):
+    print(item)
+2
+3
+4
+5
+6
+7
+8
+9
+for item in range(2,10,2):
+    print(item)
+2
+4
+6
+8
+
+
+	
+list(range(1,10))
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+enumeration------it is used to print the value as well as the place value for the element
+
+
+word = 'abcdef'
+for item in enumerate(word):
+    print(item)
+    
+(0, 'a')
+(1, 'b')
+(2, 'c')
+(3, 'd')
+(4, 'e')
+(5, 'f')
+ 
+
+zip function --- zips together two lists
+l1 = [1,2,3]
+c
+l2 = ['a', 'b', 'c']
+l1,l2
+zip(l1,l2)
+<zip at 0x1f0302bc5c8>
+item
+for item in zip(l1,l2):
+    print(item)
+(1, 'a')
+(2, 'b')
+(3, 'c')
+
+
+zip will only zip until the shortest list, incase oof uneven length lists
+
+
+in
+
+
+min
+max
+
+*****random is a built in library in python
+which has many functions
+
+from random import shuffle
+1,2,3,4,5,6,7,8,9
+mylist = [1,2,3,4,5,6,7,8,9]
+mylist
+shuffle(mylist)
+mylist
+mylist
+[2, 6, 1, 7, 5, 3, 9, 4, 8]
+
+
+from random import randint
+
+it is used to pickup a random integer
+
+print(randint(0,10))
+6
+
+
+
+input function is used as scanner
+
+input always takes in the input in string
+you have to then typecast it to other datatype
+like int(value)
+
+
+list comprahensionss are alternative to for loops that are used to make list from string
+basic way of doing that is --
+
+my_list= []
+s
+mys= 'abdkgdafkjf'
+for letter in mys:
+    my_list.append(letter)
+my_list
+my_list
+['a', 'b', 'd', 'k', 'g', 'd', 'a', 'f', 'k', 'j', 'f']
+
+too do it in a single line
+
+myl = [letter for letter in mys]
+myl
+myl
+['a', 'b', 'd', 'k', 'g', 'd', 'a', 'f', 'k', 'j', 'f']
+
+above is the easy way to do
+
+
+anything can be used but the second method uses less memmory and space
+myla = [x**2 for x in range(0,10) if x % 2 == 0]
+la
+myla
+[0, 4, 16, 36, 64]
+
+celcius = [0,2,10,22,40]
+ 
+fahr = [ (9/5)*temp + 32 for temp in celcius]
+fahr
+fahr
+[32.0, 35.6, 50.0, 71.6, 104.0]
+
+we can use if and else in list comprahension
+
+x = [temp if x%2 == or else 'ODD' for x in range(0,11)]
+
+so the order is different if we use else as well
+
+x = [x*y for x in l1 for y in l2]
+
+
+
+methods in built in object-------------------------------
+list.append
+list.app
+
+
+
+def name_func():
+    '''
+    the name function
+    '''
+    print('Hello')
+name_func()
+Hello
+
+
+
+def name(n1=' naam bol na'):
+    '''
+    return name
+    '''
+    print('hello' +n1)
+name()
+hello naam bol na
+
+
+the above is assignment of default value to the variable n1
+
+
+def pig_latin(s):
+    for i in s:
+        if i in 'aeiou':
+            pig_word = s + 'ay'
+            break
+        else:
+            pig_word = s[1:] + s[0] + 'ay' 
+            break
+    return pig_word
+    
+apple
+pig_latin('apple')
+'appleay'
+word
+pig_latin('word')
+'ordway'
+
+
+
+*args **kwargs
+arbitrary number of arguments and keyword arguments
+
+
+def myfunc(a,b):
+    return sum((a,b)) * 0.05
+40,60
+myfunc(40,60)
+5.0
+
+
+def myfunc(*args):
+    return sum(args) * 0.05
+myfunc(1,2,3,4,5,6,7,8,8,8,88) 
+7.0
+
+
+we can iterate throuugh args
+
+
+kwargs is used for disctionaryyy
+
+
+def my_func(**kwargs):
+    if 'fruit' in kwargs:
+        print('The fruit is {}'.format(kwargs['fruit']))
+    else:
+        print('Not Found')
+my_func(fruit='apple')
+The fruit is apple
+
+
+
+def myfunc(*args,**kwargs):
+    print(args)
+    print(kwargs)
+    print('I would like {} {}'.format(args[0],kwargs['a']) )
+eggs
+myfunc(1,2,45,a='eggs')
+(1, 2, 45)
+{'a': 'eggs'}
+I would like 1 eggs
+
+
+def myfunc(s):
+    i=0
+    l=[]
+    st=""
+    while i<len(s):
+        if i%2==0:
+            l.append(s[i].upper())
+            i=i+1
+        else:
+            l.append(s[i].lower())
+            i=i+1
+    for ele in l:
+        st=st+ele
+    return st
+
+
+myl = ['a','b','c']
+myl
+''.join(myl)
+'abc'
+
+
+abs function used for absolute value of func
+
+
+
+def user_choice():
+    choice = 'WRONG'
+    within_range = False
+    while choice.isdigit() == False or within_range == False:
+        choice = input("Enter value from 0-9: ")
+        if choice.isdigit() == False:
+            print("sorry that is not a number")
+        elif int(choice)<=9 and int(choice)>=0:
+            return int(choice)
+            break
+        else:
+            print("please enter value in range")
+
+
+
+
+
+
+string game----------------------------
+
+def display():
+    game_list = [0,1,2]
+    print('Here is current list: ')
+    
+    print(game_list)
+    game_on(game_list)
+
+
+
+def game_on(game_list):
+    ch = 'Y'
+    t=0
+    while ch == 'Y':
+        print(placement(game_list))
+        ch = input('to continue Y and to quit N: ')
+        if ch == 'N':
+            print('game ended')
+            break
+        elif ch == 'Y':
+            continue
+            
+        else:
+            print("enter a valid input:")
+            while ch not in ['Y', 'N']:
+                ch = input('to continue Y and to quit N: ')
+                t +=1
+                if t==2:
+                    print('entered wrong value multiple times game quitting')
+                    break
+
+
+
+
+def placement(game_list):
+    ch = user_choice()
+    val = input('enter new value of the string to be changed: ')
+    if val.isdigit() == True:
+        game_list[ch] = int(val) 
+    else:
+        game_list[ch] = val 
+    return game_list
+
+
+
+
+
+
+
+tic tac toe-------------------------
+
+
+
+def game():
+	gl=('','','','','','','','','')
+	p= role()
+	gl = play(p,gl)
+
+def role():
+	from random import randint
+	a = []
+	n1 = input("enter player 1 name: )
+	n2 = input("enter player 2 name: )
+	i = randint(0,1)
+	if i == 0
+		print("player 1 is x and goes first")
+		c1='X'
+		c2='O'
+	else:
+		print("player 2 is x and goes first")
+		c2='X'
+		c1='O'
+	a.append(c1)
+	a.append(c2)
+	return a
+
+def play(p,gl):
+	k = False
+	if p[0]='X':
+		i=0
+	else:
+		i=1
+	ch=input(f'player{i+1} enter a value between 1-9 to place your value')
+	while ch not in range(1,10):
+		print("enter valid value")
+		ch=input(f'player{i+1} enter a value between 1-9 to place your value')
+	else:
+		while k 
+			gl[ch-1] = p[i]
+			if i=1:
+				i= i-1
+			else:
+				i=i+1
+			display_board(gl)
+			k=des(gl)
+
+
+def des(g):
+	i=0
+	j=0
+	k=0
+	l=0
+	while k<2:
+		if g[i]==g[i+1] and g[i+1]==g[i+2]
+			return True
+		i=i+3
+		k=k+1
+	while k<2:
+		if g[j]==g[j+3] and g[j+3]==g[j+6]
+			return True
+		i=j+1
+		l+=1
+	if g[0] == g[4] and g[4] == g[8]:
+		return True
+	elseif g[2]==g[4] and g[4]==g[6]:
+		return True
+	else:
+		return False
+
+
+def display_board(game_list):
+    i=0
+    while i < len(game_list):
+        print(f'\t{game_list[i]} | {game_list[i+1]} | {game_list[i+2]}')
+        if(i<6):
+            print("---------------------------")
+        i=i+3
+
+
+
+
+
+
+tic tac toe enhanced----------------
+
+def game():
+    gl=(' ',' ',' ',' ',' ',' ',' ',' ',' ')
+    p= role()
+    print(p)
+    play(p,gl)
+
+
+def role():
+    from random import randint
+    a = []
+    n1 = input("enter player 1 name: ")
+    n2 = input("enter player 2 name: :")
+    i = randint(0,1)
+    if i == 0:
+        print("player 1 is x and goes first")
+        c1='X'
+        c2='O'
+    else:
+        print("player 2 is x and goes first")
+        c2='X'
+        c1='O'
+    a.append(c1)
+    a.append(c2)
+    return a
+
+
+def play(z,j):
+    k = False
+    from os import system
+    p=list(z)
+    gl=list(j)
+    if p[0]=='X':
+        i=0
+    else:
+        i=1
+    ch=int(input(f'player{i+1} enter a value between 1-9 to place your value'))
+    while ch not in range(1,10):
+        print("enter valid value")
+        ch=int(input(f'player{i+1} enter a value between 1-9 to place your value'))
+    else:
+        while k == False:
+            while gl[ch-1] != ' ':
+                ch=int(input(f'player{i+1} value already present there enter again: '))
+            else:
+                l= ch-1
+                gl[l] = p[i]
+                display_board(gl)
+                k=des(gl)
+                if k == True:
+                    print(f"PLAYER{i+1} HAS WON THE GAME")
+                    break
+                if i==1:
+                    i= i-1
+                else:
+                    i=i+1
+                ch=int(input(f"player{i+1} enter a value between 1-9 to place your value"))
+            
+        
+            
+def des(g):
+    i=0
+    j=0
+    k=0
+    l=0
+    while k<3:
+        if g[i]==g[i+1] and g[i+1]==g[i+2] and g[i] != ' ':
+            return True
+        i=i+3
+        k=k+1
+    while l<3:
+        if g[j]==g[j+3] and g[j+3]==g[j+6] and g[j] != ' ':
+            return True
+        j=j+1
+        l =l+1
+    if g[0] == g[4] and g[4] == g[8] and g[0] != ' ':
+        return True
+        
+    elif g[2]==g[4] and g[4]==g[6] and g[2] != ' ':
+        return True
+        
+    else:
+        return False
+
+
+
+
+def display_board(game_list):
+    i=0
+    while i < len(game_list):
+        print(f'\t{game_list[i]} | {game_list[i+1]} | {game_list[i+2]}')
+        if(i<6):
+            print("---------------------------")
+        i=i+3
+
+
+
+
+
+
+-----------------------oop-----------------------------------
+my_list= [1,2,3]
+myset = set()
+pass
+class Sample():
+    pass
+my_sample
+my_sample = Sample()
+type(my_sample)
+__main__.Sample
+
+
+
+
+my_list= [1,2,3]
+myset = set()
+f
+class Dog():
+    species = 'Mammal'
+    def __init__(self,mybreed,name,spots):
+        self.breed = mybreed
+        self.name = name
+        self.spots = spots
+    def bark(self):
+        print(f'woof!! my name is {self.name}')
+my_Dog = Dog('Husky','bast',False)
+my_Dog.bark()
+woof!! my name is bast 
+
+
+
+
+class Circle():
+    #Class object attribue
+    pi = 3.14
+    def __init__(self,radius=1):
+        self.radius = radius
+        self.area = Circle.pi*self.radius*self.radius
+    def getc(self,rad):
+        return 2 * Circle.pi * rad
+circ = Circle()
+circ.area
+3.14
+4
+circ.getc(4)
+
+
+
+
+
+class Book():
+    def __init__(self,title,author,pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+    def __str__(self):
+        return f"{self.title} by {self.author} and has {self.pages}"
+    def __len__(self):
+        return self.pages
+    def __del__(self):
+        print("the book is deleted")
+    
+b = Book('pyt', 'abc', 200)
+b = Book('pyt', 'abc', 200)
+print(b)
+pyt by abc and has 200
+len(b)
+len(b)
+200
+del b
+del b
+the book is deleted
+
+
+
+
+
+
+class Line:
+    def __init__(self,cor1,cor2):
+        from math import sqrt
+        self.cor1 = cor1
+        self.cor2 = cor2
+    def dis(self):
+        from math import sqrt
+        return sqrt((self.cor2[1] - self.cor1[1])**2 +(self.cor2[0] - self.cor1[0])**2)
+    def slope(self):
+        return (self.cor2[1] - self.cor1[1])/(self.cor2[0]- self.cor1[0])
+2,3
+a = Line((1,2),(2,3))
+a.cor1
+(1, 2)
+a.dis()
+1.4142135623730951
+a.slope()
+1.0
+
+
+
+
+pip-------------------
+
+pip install requests
+pip install coloroma
+from coloroma import init
+init()
+from coloroma import Fore
+print(Fore.RED)
+
+
+
+
+
+
+
+
+
+
+decorators
+
+add extra functionality on already existing function and add or off the extra functionality wheenever you want
+
+
+def new_decorator(original_func):
+    def wrap_func():
+        print('some extra code before func')
+        original_func()
+        print('some extra code after')
+    return wrap_func
+hello
+a = new_decorator(hello)
+a()
+some extra code before func
+the hello() func is executes
+	 this greet func
+inside welcome
+this is end of hello
+some extra code after
+@new_decorator
+def hello():
+    print('need a dec')
+hello()
+some extra code before func
+need a dec
+some extra code after
+
+
+
+generators
+
+yield is used to conserve memmory
+
+
+
+def gen_fibon(n):
+    a= 1
+    b = 1
+    for ui in range(n):
+        yield a
+        a,b = b , a +b
+gen_fibon(9)
+<generator object gen_fibon at 0x0000027744E1B5C8>
+list(gen_fibon(9))
+[1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+
+
+above is memmory efficient
+
+
+def simple_gen():
+    for x in range(3):
+        yield x
+for number in simple_gen():
+    print(number)
+0
+1
+2
+g = simple_gen()
+g
+g
+<generator object simple_gen at 0x0000027745487EC8>
+print(next(g))
+0
+
+print(next(g))
+1
+
+print(next(g))
+2
+
+
+
+
+generator functions ------------------ next() and iter()
+
+
+s = 'hello'
+s
+for let in s:
+    print(let)
+h
+e
+l
+l
+o
+(s)
+s_iter = iter(s)
+next(s_iter)
+next(s_iter)
+'h'
+next(s_iter)
+'e'
+
+
+
+iter is used to use next iteration in a string as string doesnot allow next() directly
+
+
+the above is used to print the next things
+for loop also does this
+g keeps the value in its memmory and gives next value
+
+
+25.12
+
+
+important modules in python
+
+collections
+os and datetime
+math and random
+python debugger
+timeit
+regular expressions
+unzipping and zipping modules 
+
+
+from collections import Counter
+my_list = (1,1,1,1,1,2,2,2,2,4,4,4,4,5,5,5,5)
+Counter(my_list)
+Counter({1: 5, 2: 4, 4: 4, 5: 4})
+
+my_list = ['a','a',10,10,10]
+Counter(my_list)
+
+
+
+counter is a  subclass of dictionary
+Counter('afsjbfjksbjdbfjabjbraeiabffiu')
+
+Counter({'a': 4,
+         'f': 5,
+         's': 2,
+         'j': 5,
+         'b': 6,
+         'k': 1,
+         'd': 1,
+         'r': 1,
+         'e': 1,
+         'i': 2,
+         'u': 1})
+
+
+to count a word using counter----
+
+sentence = 'this is an example on is an how a count works and is an very good example'
+Counter(sentence.split())
+Counter({'this': 1,
+         'is': 3,
+         'an': 3,
+         'example': 2,
+         'on': 1,
+         'how': 1,
+         'a': 1,
+         'count': 1,
+         'works': 1,
+         'and': 1,
+         'very': 1,
+         'good': 1})
+
+
+Counter(sentence.split()).most_common()
+[('is', 3),
+ ('an', 3),
+ ('example', 2),
+ ('this', 1),
+ ('on', 1),
+ ('how', 1),
+ ('a', 1),
+ ('count', 1),
+ ('works', 1),
+ ('and', 1),
+ ('very', 1),
+ ('good', 1)]
+
+
+Counter(sentence.split()).most_common(3)
+[('is', 3), ('an', 3), ('example', 2)]
+
+
+
+list(Counter(sentence.split()))
+['this',
+ 'is',
+ 'an',
+ 'example',
+ 'on',
+ 'how',
+ 'a',
+ 'count',
+ 'works',
+ 'and',
+ 'very',
+ 'good']
+
+
+from collections import defaultdict
+
+it will assign default value where a value is not present for a particular key value passes
+
+d = defaultdict(lambda: 0)
+ab
+d['ab']
+0
+o
+d['wro']
+0
+d['a']
+0
+d['a'] = 5
+d['a']
+5
+wro 
+d['wro']
+0
+
+
+
+opening of files through python
+
+
+
+pwd
+'C:\\Users\\Ankur Arjun Nagpal\\Desktop'
+w+
+f = open('abc.txt', 'w+')
+sdbf3jkghfihdglhjlkeghldhlg
+f.write('sdbf3jkghfihdglhjlkeghldhlg')
+27
+f.close()
+f.close()
+import os
+import os
+os.getcwd()
+'C:\\Users\\Ankur Arjun Nagpal\\Desktop'
+
+
+this getcwd can be used in any python script
+
+
+os.listdir()
+['.ipynb_checkpoints',
+ 'abc.txt',
+ 'desktop.ini',
+ 'Games',
+ 'html pages',
+ 'myprog.py',
+ 'notes.ipynb',
+ 'project1',
+ 'python notes.txt']
+
+
+
+os.listdir('C:\\Users')
+['91701',
+ 'All Users',
+ 'Ankur Arjun Nagpal',
+ 'Default',
+ 'Default User',
+ 'desktop.ini',
+ 'Public']
+
+
+to mmove file we can use shutil
+
+import shutil
+shutil.move('Documents.txt','C:\\Users\\Ankur Arjun Nagpal\\Documents' )
+
+
+now inorder to delete files we can use
+
+os.unlink(path)
+this removes file in path
+os.rmdir(path)
+this removes a whole directory from mentioned path
+put the directory must be empty
+os.rmtree(path)
+most dangeroous as it removes all files and folders and we cannot retreive the file
+
+insttead of this you can use send2trash module which is outside module which we can install by pip
+
+import os
+os.unlink('C:\\Users\\Ankur Arjun Nagpal\\Desktop\\html pages\\myf.txt')
+
+
+import send2trash
+os.listdir()
+['.ipynb_checkpoints',
+ 'desktop.ini',
+ 'Documents',
+ 'Games',
+ 'html pages',
+ 'myprog.py',
+ 'notes.ipynb',
+ 'project1',
+ 'python notes.txt']
+send2trash.send2trash('Documents')
+os.listdir()
+['.ipynb_checkpoints',
+ 'desktop.ini',
+ 'Games',
+ 'html pages',
+ 'myprog.py',
+ 'notes.ipynb',
+ 'project1',
+ 'python notes.txt']
+
+
+
+
+we can also use shut.move('path',os.getcwd()) to move in current path
+
+
+ for a,b,c in os.walk(os.getcwd()):
+    print(f"{a} {b} {c}")
+C:\Users\Ankur Arjun Nagpal\Desktop ['.ipynb_checkpoints', 'Games', 'html pages', 'project1'] ['desktop.ini', 'myprog.py', 'notes.ipynb', 'python notes.txt']
+C:\Users\Ankur Arjun Nagpal\Desktop\.ipynb_checkpoints [] ['notes-checkpoint.ipynb']
+C:\Users\Ankur Arjun Nagpal\Desktop\Games [] ['Call of Duty Modern Warfare.lnk', 'Cities Skylines.lnk', 'Dragon Ball Z - Kakarot.lnk', 'Dying Light.url', 'FIFA 19.lnk', 'FIFA 20.lnk', 'Grand Theft Auto V.url', 'My Friend Pedro.lnk', 'Need for Speed™ Heat.lnk', "PLAYERUNKNOWN'S BATTLEGROUNDS.url", 'Rise of the Tomb Raider.url', 'Rocket League.url', 'Rockstar Games Launcher.lnk', 'Sid Meiers Civilization VI.lnk', 'starwarsjedifallenorder - Shortcut.lnk', 'Titanfall™ 2.lnk', 'UNDEFEATED.url']
+C:\Users\Ankur Arjun Nagpal\Desktop\html pages ['.ipynb_checkpoints', '__pycache__'] ['adkhjsaafb.txt', 'hello.py', 'image.jfif', 'index.html', 'messi.jfif', 'myfileaan.txt', 'myfirstnotebook.ipynb', 'mymod.py', 'myprog.py', 'style.css', 'Untitled-Copy1.ipynb', 'Untitled.ipynb']
+C:\Users\Ankur Arjun Nagpal\Desktop\html pages\.ipynb_checkpoints [] ['myfirstnotebook-checkpoint.ipynb', 'Untitled-checkpoint.ipynb', 'Untitled-Copy1-checkpoint.ipynb']
+C:\Users\Ankur Arjun Nagpal\Desktop\html pages\__pycache__ [] ['mymod.cpython-37.pyc']
+C:\Users\Ankur Arjun Nagpal\Desktop\project1 ['resources', 'vendors'] ['index.html']
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\resources ['css', 'data', 'img', 'js'] []
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\resources\css [] ['queries.css', 'style.css']
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\resources\data ['img'] []
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\resources\data\img [] []
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\resources\img [] ['.DS_Store', '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', 'app-iPhone.png', 'back-customers.jpg', 'berlin.jpg', 'customer-1.jpg', 'customer-2.jpg', 'customer-3.jpg', 'download-app-android.png', 'download-app.svg', 'hero.jpg', 'lisbon-3.jpg', 'logo-white.png', 'logo.png', 'london.jpg', 'san-francisco.jpg']
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\resources\js [] []
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\vendors ['css', 'fonts', 'js'] []
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\vendors\css [] ['2015-03-25_13-52-05__grid.css', 'ionicons.min.css', 'normalize.css']
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\vendors\fonts [] ['ionicons.eot', 'ionicons.svg', 'ionicons.ttf', 'ionicons.woff']
+C:\Users\Ankur Arjun Nagpal\Desktop\project1\vendors\js [] []
+
+
+
+
+
+
+import datetime
+myt = datetime.time()
+print(myt)
+print(myt)
+00 00 00
+2,22,33,22
+myt = datetime.time(2,22,33,22)
+print(myt)
+'02 22 33 000022'
+import datetime
+ab = datetime.date.today()
+?
+ab
+print(ab)
+2020-07-01
+
+
+
+print(ab)
+2020-07-01
+ab.ctime
+ab = datetime.date.today()
+ab
+ab
+datetime.date(2020, 7, 17)
+ab.ctime()
+'Fri Jul 17 00:00:00 2020'
+year
+ab.year
+2020
+ab.day
+ab.day
+1
+ab.month
+7
+
+
+
+from datetime import datetime
+mydt = 
+mydt = datetime(2021,4,2,14,12,22,22)
+mydt
+print(mydt)
+2021-04-02 14:12:22.000022
+0
+mydt = mydt.replace(year = 2020)
+datetime.datetime(2020, 4, 2, 14, 12, 22, 22)
+
+
+date time arithemetic:::
+
+from datetime import date
+d1 = date(2020,4,2)
+d2 = date(2019,6,7)
+d1 - d2
+d1 - d2
+datetime.timedelta(days=300)
+d2 - d1
+d2 - d1
+datetime.timedelta(days=-300)
+
+
+result = d2 - d1
+2
+dt1 = datetime(2020,11,3,22,33,21)
+dt2 = datetime(2013,4,3,22,4,55)
+d
+dt1 - dt2
+datetime.timedelta(days=2771, seconds=1706)
+
+
+
+
+m = dt1 - dt2
+days
+m.days
+2771
+m.max
+datetime.timedelta(days=999999999, seconds=86399, microseconds=999999)
+m.resolution
+datetime.timedelta(microseconds=1)
+m.total_seconds()
+239416106.0
+
+
+
+math module
+
+
+value = 4.35
+math.floor(value)
+4
+value
+math.ceil(value)
+5
+round(value)
+4
+
+
+math.pi
+3.141592653589793
+math.e
+math.e
+2.718281828459045
+math.inf
+math.inf
+inf
+math.nan
+math.nan
+nan
+
+
+numpy is also used for deeper cnumerical funcs
+
+math.log(math.e)
+1.0
+100,10
+math.log(100,10)
+2.0
+
+math.degrees(math.sin(10))
+-31.17011361997944
+
+random
+
+
+
+
+random.seed(42)
+?
+random.randint(0,100)
+81
+random.randint(0,100)
+14
+random.randint(0,100)
+3
+random.seed(42)
+?
+print(random.randint(0,100))
+print(random.randint(0,100))
+print(random.randint(0,100))
+print(random.randint(0,100))
+81
+14
+3
+94
+
+
+
+setting a seed causes us to get the same random integers in the same sequence
+
+
+mylist33 = list(range(0,100))
+random.choice(mylist33)
+random.choice(mylist33)
+31
+
+
+ the above  is sample with replacement ie we can choose same number agaain
+
+
+random.choices(population = mylist33,k = 10)
+[22, 73, 67, 89, 8, 42, 2, 21, 50, 2]
+
+
+now for choosing without replacement
+
+random.sample(population = range(0,10), k = 10)
+[3, 8, 6, 1, 9, 4, 2, 0, 5, 7]
+
+
+random.shuffle(mylist)
+
+will shuffle list
+
+
+random.uniform(0,100)
+34.02505165179919
+--->the above function is used to choose a value between 0 to hundred with any kind of precission
+
+random.gauss(mu = 0 , sigma = 1)
+1.404896703968453
+
+
+
+python debugger
+
+
+import pdb
+pdb.set_trace()
+
+
+
+reg expression - 
+
+
+used to find a regular pattern in text
+
+example to find an email --
+text + "@" + text + ".com"
+
+is is used by re directory
+
+
+
+r"(\d{3})-\d{3}-\d{4})"
+
+
+text = " The agends phone number is 408-666-704. Call soon!"
+"phone" in text
+True
+ort re 
+import re 
+ne
+pattern = "phone"
+pattern,text
+re.search(pattern,text)
+<re.Match object; span=(12, 17), match='phone'>
+
+
+match.span()
+(12, 17)
+match.start()
+12
+match.end()
+17
+
+
+pattern = "phone"
+ phone phone phone is phone
+text = " phone phone phone is phone"
+match = re.findall(pattern,text)
+match
+match
+['phone', 'phone', 'phone', 'phone']
+
+
+
+<re.Match object; span=(1, 6), match='phone'>
+<re.Match object; span=(7, 12), match='phone'>
+<re.Match object; span=(13, 18), match='phone'>
+<re.Match object; span=(22, 27), match='phone'>
+
+for match in re.finditer('phone',text):
+    print(match.group())
+phone
+phone
+phone
+phone
+
+
+\d -- digit
+\w -- alphanumeric
+\s --  space
+\D -- non digit
+\W -- NON APLHA NUMERIC
+\S -- NON WHITE SPACE
+
+
+mytext = " the phone number is 233-222-3333"
+phone = re.search(r'\d\d\d-\d\d\d-\d\d\d\d',mytext)
+phone
+phone
+<re.Match object; span=(21, 33), match='233-222-3333'>
+
+phone.group()
+'233-222-3333'
+
+quantifiers is used to ignore repititions of same charectors --
+phone = re.search(r'\d{3}-\d{3}-\d{4}',mytext)
+phone
+phone
+<re.Match object; span=(21, 33), match='233-222-3333'>
+
+
+quantifiers --
++ -- occurs one or more times
+{} -- exactly that number of times
+{n1,n2} -- occurs between the two ranges
+{n1,} --- occurs n1 or more times
+* --- occurs zero or more times
+? --- once or none
+
+
+
+now quantifiers can only return back the whole group ie the whole phone number , inorder to get the groups of phone number differently , then we use re.compile
+
+
+ab = re.compile("(\d{3})-(\d{3})-(\d{4})")
+text
+phone = re.search(ab,mytext)
+phone
+phone
+<re.Match object; span=(21, 33), match='233-222-3333'>
+phone.group()
+'233-222-3333'
+phone.group(1)
+'233'
+phone.group(2)
+'222'
+
+in the above group indexing starts at 1 and not from 0
+
+
+
+in order to search 1 or more patterns in string
+
+re.search(r'cat|dog','the cat is fine')
+re.search(r'cat|dog','the cat is fine')
+<re.Match object; span=(4, 7), match='cat'>
+dog
+re.search(r'cat|dog','the dog is fine')
+<re.Match object; span=(4, 7), match='dog'>
+
+the | operator is used
+
+
+re.findall(r'at','the bat sat on the cat mat')
+['at', 'at', 'at', 'at']
+.
+re.findall(r'.at','the bat sat on the cat mat')
+['bat', 'sat', 'cat', 'mat']
+
+the . here acts as an wildcard charector
+
+re.findall(r'...at','the bat sat on the cat mat was splat')
+['e bat', 'e cat', 'splat']
+
+^ sign for starts with a particular pattern and
+$ sign for ends with a partiicular pattern
+
+re.findall(r'^\d','1 is a number')
+['1']
+the 
+re.findall(r'^\d','the 1 is a number')
+[]
+
+note that the starts with and ends with is only used for start of whole string and end of whole string
+
+pattern = r'[^\d]+'
+re.findall(pattern,phrase)
+['there ', ' is ', ' so many ', ' numbers ', ' in this']
+hence it is used to remove the numbers in the given phrase
+this method is basically used to delete the punctuations in a given sentence
+
+
+phrase = 'there are ! a lot of . punctuations in this group?'
++
+pattern = r'[^!.? ]+'
+phrase
+clean = re.findall(pattern,phrase)
+clean
+clean
+['there', 'are', 'a', 'lot', 'of', 'punctuations', 'in', 'this', 'group']
+' '.join(clean)
+'there are a lot of punctuations in this group'
+
+we can also use like this ---
+re.search(r'cat(fish|nap|erpillar)',text)
+
+this can be used to find the word catfish , catnap, caterpillar
+
+
+timing your code
+
+%%timeit only works for jupiter
+timeit module
+
+
+def func1(n):
+    return [str(num) for num in range(n)]
+func1(10)
+['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+10
+def func2(n):
+    return list(map(str,range(10)))
+0
+func2(10)
+['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+import time
+import time
+2
+start_time = time.time()
+result = func2(10000000)
+end_time = time.time()
+elapsed = end_time - start_time
+print(elapsed)
+0.2044534683227539
+
+start_time = time.time()
+result = func1(10000000)
+end_time = time.time()
+elapsed = end_time - start_time
+print(elapsed)
+1.9149291515350342
+
+timeit ---
+
+
+import timeit
+stmt = '''
+func1(100)
+
+'''
+stmt = '''
+func1(100)
+?
+'''
+setup = '''
+
+def func1(n):
+    return [str(num) for num in range(n)]
+
+'''
+setup = '''
+?
+def func1(n):
+    return [str(num) for num in range(n)]
+?
+'''
+timeit.timeit(stmt,setup,number = 100000)
+timeit.timeit(stmt,setup,number = 100000)
+1.5900695999998788
+2
+stmt = '''
+func2(100)
+?
+'''
+setup = '''
+def func2(n):
+    return list(map(str,range(10)))
+?
+'''
+timeit.timeit(stmt,setup,number = 100000)
+0.1906238999999914
+
+
+we use multi line string with triple quotes
+
+
+speiall jupiter notebook function ---
+%%timeit
+func1(100)
+16.1 µs ± 291 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+2
+%%timeit
+func2(100)
+1.69 µs ± 72.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+
+
+zipping and unzipping file
+
+import zipfile
+compfile.zip
+compfile = zipfile.ZipFile('compfile.zip','w')
+compfile.write('file1.txt',compress_type=zipfile.ZIP_DEFLATED)
+compfile.write('file1.txt',compress_type=zipfile.ZIP_DEFLATED)
+2
+compfile.write('file2.txt',compress_type=zipfile.ZIP_DEFLATED)
+compfile.close()
+zip_obj = zipfile.ZipFile('compfile.zip','r')
+zip_obj.extractall('extracted_cotent')
+
+import shutil
+pwd
+pwd
+'C:\\Users\\Ankur Arjun Nagpal\\Desktop'
+zod = 'C:\\Users\\Ankur Arjun Nagpal\\Desktop\\extracted_cotent'
+example
+outzod = 'example'
+,zod
+shutil.make_archive(outzod,'zip',zod)
+'C:\\Users\\Ankur Arjun Nagpal\\Desktop\\example.zip'
+
+
+the shutil is simpler to use to convert a directory to zipped
+
+shutil.unpack_archive('example.zip','final_unzip','zip')
+
+
+
+
+web scraping ---
+
+used to take the data from the web like info or imagees
+
+
+
+pip install below libraries
+
+import requests
+import lxml
+import lxml
+import bs4
+import bs4
+result = requests.get("http://www.example.com")
+type(result)
+requests.models.Response
+result.text
+result.text
+'<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset="utf-8" />\n    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <style type="text/css">\n    body {\n        background-color: #f0f0f2;\n        margin: 0;\n        padding: 0;\n        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;\n        \n    }\n    div {\n        width: 600px;\n        margin: 5em auto;\n        padding: 2em;\n        background-color: #fdfdff;\n        border-radius: 0.5em;\n        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);\n    }\n    a:link, a:visited {\n        color: #38488f;\n        text-decoration: none;\n    }\n    @media (max-width: 700px) {\n        div {\n            margin: 0 auto;\n            width: auto;\n        }\n    }\n    </style>    \n</head>\n\n<body>\n<div>\n    <h1>Example Domain</h1>\n    <p>This domain is for use in illustrative examples in documents. You may use this\n    domain in literature without prior coordination or asking for permission.</p>\n    <p><a href="https://www.iana.org/domains/example">More information...</a></p>\n</div>\n</body>\n</html>\n'
+lxml
+soup = bs4.BeautifulSoup(result.text,"lxml")
+soup
+soup
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-type"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: #fdfdff;
+        border-radius: 0.5em;
+        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    </style>
+</head>
+<body>
+<div>
+<h1>Example Domain</h1>
+<p>This domain is for use in illustrative examples in documents. You may use this
+    domain in literature without prior coordination or asking for permission.</p>
+<p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
+
+soup.select('a')
+[<a href="https://www.iana.org/domains/example">More information...</a>]
+
+to only get the text value from the list produced you can use the below function ---
+  
+soup.select('a')[0].getText()
+'More information...'
+soup.select('.toctext')
+[<span class="toctext">Early life and education</span>,
+ <span class="toctext">Career</span>,
+ <span class="toctext">World War II</span>,
+ <span class="toctext">UNIVAC</span>,
+ <span class="toctext">COBOL</span>,
+ <span class="toctext">Standards</span>,
+ <span class="toctext">Retirement</span>,
+ <span class="toctext">Post-retirement</span>,
+ <span class="toctext">Anecdotes</span>,
+ <span class="toctext">Death</span>,
+ <span class="toctext">Dates of rank</span>,
+ <span class="toctext">Awards and honors</span>,
+ <span class="toctext">Military awards</span>,
+ <span class="toctext">Other awards</span>,
+ <span class="toctext">Legacy</span>,
+ <span class="toctext">Places</span>,
+ <span class="toctext">Programs</span>,
+ <span class="toctext">In popular culture</span>,
+ <span class="toctext">Grace Hopper Celebration of Women in Computing</span>,
+ <span class="toctext">Notes</span>,
+ <span class="toctext">Obituary notices</span>,
+ <span class="toctext">See also</span>,
+ <span class="toctext">References</span>,
+ <span class="toctext">Further reading</span>,
+ <span class="toctext">External links</span>]
+.text
+for item in soup.select('.toctext'):
+    print(item.text)
+Early life and education
+Career
+World War II
+UNIVAC
+COBOL
+Standards
+Retirement
+Post-retirement
+Anecdotes
+Death
+Dates of rank
+Awards and honors
+Military awards
+Other awards
+Legacy
+Places
+Programs
+In popular culture
+Grace Hopper Celebration of Women in Computing
+Notes
+Obituary notices
+See also
+References
+Further reading
+External links
+
+
+
+
+abc = soup.select('.image')[0]
+abc['src']
+abc['src']
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-48-b9faf36618fc> in <module>
+----> 1 abc['src']
+
+D:\python\lib\site-packages\bs4\element.py in __getitem__(self, key)
+   1319         """tag[key] returns the value of the 'key' attribute for the Tag,
+   1320         and throws an exception if it's not there."""
+-> 1321         return self.attrs[key]
+   1322 
+   1323     def __iter__(self):
+
+KeyError: 'src'
+
+soup.select('img')[1]
+soup.select('img')[1]
+<img alt="Bruno Fernandes Portugal, 2018.jpg" data-file-height="670" data-file-width="447" decoding="async" height="330" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bruno_Fernandes_Portugal%2C_2018.jpg/220px-Bruno_Fernandes_Portugal%2C_2018.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bruno_Fernandes_Portugal%2C_2018.jpg/330px-Bruno_Fernandes_Portugal%2C_2018.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bruno_Fernandes_Portugal%2C_2018.jpg/440px-Bruno_Fernandes_Portugal%2C_2018.jpg 2x" width="220"/>
+ = 
+abc = soup.select('img')[1]
+type(abc)
+bs4.element.Tag
+abc['src']
+abc['src']
+'//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bruno_Fernandes_Portugal%2C_2018.jpg/220px-Bruno_Fernandes_Portugal%2C_2018.jpg'
+
+
+
+inorder to print the img in jupiter notebooks go to cell --- type ---select markdown
+images = requests.get("http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bruno_Fernandes_Portugal%2C_2018.jpg/220px-Bruno_Fernandes_Portugal%2C_2018.jpg")
+images.content
+b'\xff\xd8\xff\xdb\x
+
+f = open("brunoimg.jpg",'wb')
+images.content
+f.write(images.content)
+17704
+f.close()
+1
+1
+1
+
+abc['src']
+'//upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bruno_Fernandes_Portugal%2C_2018.jpg/220px-Bruno_Fernandes_Portugal%2C_2018.jpg'
+
+
+http://books.toscrape.com/
+
+
+
+to get the title of the book with 2 star rating---
+
+
+base_url = 'http://books.toscrape.com/catalogue/page-{}.html'
+res = requests.get(base_url.format(1))
+?
+soup = bs4.BeautifulSoup(res.text,"lxml")
+soup.select(".product_pod")
+soup.select(".product_pod")
+[<article class="product_pod">
+ <div class="image_container">
+ <a href="a-light-in-the-attic_1000/index.html"><img alt="A Light in the Attic" class="thumbnail" src="../media/cache/2c/da/2cdad67c44b002e7ead0cc35693c0e8b.jpg"/></a>
+ </div>
+ <p class="star-rating Three">
+ <i class="icon-star"></i>
+
+first way to get if the particular product has star rating two ---
+
+
+products = soup.select(".product_pod")
+example = 
+example = products[0]
+T
+'star-rating Three' in str(example)
+True
+
+second wayy ---
+example.select(".star-rating.Three")
+[<p class="star-rating Three">
+ <i class="icon-star"></i>
+ <i class="icon-star"></i>
+ <i class="icon-star"></i>
+ <i class="icon-star"></i>
+ <i class="icon-star"></i>
+ </p>]
+
+example.select("a")[1]['title']
+'A Light in the Attic'
+
+
+
+i = 0 
+two_star_titles = []
+k = 0
+for i in range(1,51):
+    scrape_url = base_url.format(i)
+    res = requests.get(scrape_url)
+    souped = bs4.BeautifulSoup(res.text,"lxml")
+    j = len(souped.select(".product_pod"))
+    for k in range(0,j):
+        example = souped.select(".product_pod")[k]
+        if [] != example.select(".star-rating.Two"):
+            abc = example.select("a")[1]['title']
+            two_star_titles.append(abc)
+
+
+
+
+from PIL import Image
+mac = 
+mac = Image.open('brunoimg.jpg')
+type(mac)
+PIL.JpegImagePlugin.JpegImageFile	
+
+mac.size
+(220, 330)
+mac.filename
+'brunoimg.jpg'
+mac.format_description
+'JPEG (ISO 10918)'
+
+
+mac.crop((30,10,150,165))
+
+mac.paste(im=comp,box=(80,0))
+
+mac.rotate(90)
+mac.resize()
+
+mac.putalpha(80)
+
+the above is used for transperancy
+0 to 255
+
+pdf and csv files extractiom
+
+pandas libraries is best but very larger library
+openpyxl module for excel
+google sheets python api
+csv modules --
+
+
+
+import csv
+utf-8
+data = open('C:\\Users\\Ankur Arjun Nagpal\\Desktop\\example.csv',encoding = 'utf-8')
+pwd
+pwd
+'C:\\Users\\Ankur Arjun Nagpal'
+data
+csvdata = csv.reader(data)
+csvdata
+datalines = list(csvdata)
+datalines
+datalines
+[['id', 'first_name', 'last_name', 'email', 'gender', 'ip_address', 'city'],
+ ['1',
+  'Joseph',
+  'Zaniolini',
+  'jzaniolini0@simplemachines.org',
+  'Male',
+  '163.168.68.132',
+  'Pedro Leopoldo'],...]
+
+
+
+emails_lis = []
+for emails in datalines[1:]:
+    emails_lis.append(emails[3])
+emails_lis
+['jzaniolini0@simplemachines.org',
+ 'fdrillingcourt1@umich.edu',
+ 'nherity2@statcounter.com',
+ 'ofrayling3@economist.com',
+
+file_to_output = open('C:\\Users\\Ankur Arjun Nagpal\\Desktop\\new_csv_file.csv',mode = 'w',newline = '')
+csv_writer = csv.writer(file_to_output,delimiter = ',')
+c
+csv_writer.writerow(['a','b','c'])
+7
+]
+csv_writer.writerows([['d','e','f'],['g','h','i']])
+file_to_output.close()
+1
+1
+1
+
+
+pdf --------
+pypdf2 library is open source and there are other paid modules
+
+pip install PyPDF2
+
+import PyPDF2
+f = open('C:\\Users\\Ankur Arjun Nagpal\\Desktop\\Working_Business_Proposal.pdf','rb')
+f
+pdf_reader = PyPDF2.PdfFileReader(f)
+pdf_reader.numPages
+5
+0
+page_one = pdf_reader.getPage(0)
+page_one = page_one.extractText()
+page_one
+page_one
+'Business Proposal\n The Revolution is Coming\n Leverage agile frameworks to provide a robust synopsis for high level \noverviews. Iterative approaches to corporate strategy foster collaborative \nthinking to further the overall value proposition. Organically grow the \nholistic world view of disruptive innovation via workplace diversity and \nempowerment. \nBring to the table win-win survival strategies to ensure proactive \ndomination. At the end of the day, going forward, a new normal that has \nevolved from generation X is on the runway heading towards a streamlined \ncloud solution. User generated content in real-time will have multiple \ntouchpoints for offshoring. \nCapitalize on low hanging fruit to identify a ballpark value added activity to \nbeta test. Override the digital divide with additional clickthroughs from \nDevOps. Nanotechnology immersion along the information highway will \nclose the loop on focusing solely on the bottom line. Podcasting operational change management inside of wor
+
+
+this module can only add pages to pdf , but not insert any data in the mdddle of any page
+
+
+
+import getpass
+getpass.getpass("enter password")
+
+to hide the password
+
+
+smtp is used for emaiil
+
+
+
+
+
+numpy
+
+
+import numpy
+arr1= numpy.array(input().split(),int)
+i=0
+li=[]
+while i<arr1[0]:
+    li.append(input().split())
+    i+=1
+arr2= numpy.array(li,int)
+mini = numpy.min(arr2,axis=1)
+print(numpy.max(mini))
+
+min max on axis 0,1,null
+
+
+import numpy
+
+arr1 = numpy.array(input().split(),int)
+i =0
+li=[]
+while i <arr1[0]:
+    li.append(input().split())
+    i+=1
+arr2 = numpy.array(li,int)
+summer = numpy.sum(arr2,axis=0)
+print(numpy.prod(summer))
+
+
+
+
+import numpy
+numpy.set_printoptions(sign=' ')                     //use set_printoptions(sign=' ') sign can be ' ' or '+' or '-'
+arr1 = numpy.array(input().split(),float)
+print(numpy.floor(arr1))
+print(numpy.ceil(arr1))
+print(numpy.rint(arr1))
+
+
+floor ceil always in float datatype
+
+
+
+
+import numpy
+a = tuple(map(int,input().split()))
+if a[0]==a[1]:
+    arr1=numpy.identity(a[0])
+else:
+    arr1=numpy.eye(a[0],a[1],k=0)
+print(str(arr1).replace('0.',' 0.').replace('1.',' 1.'))
+
+
+
+identity matrix where m=n then identity else m!=n then eye
+
+
+
+
+import numpy
+li=[]
+lf=input().split()
+m=int(lf[0])
+n=int(lf[1])
+p=lf[2]
+i,j = 0,0
+li1=[]
+li2=[]
+while i<m:
+    li1.append(input().split())
+    i+=1
+while j<n:
+    li2.append(input().split())
+    j+=1
+arr1=numpy.array(li1,int)
+arr2=numpy.array(li2,int)
+arrsum = numpy.concatenate((arr1,arr2),axis=0)
+print(arrsum)
+
+print addition along axis 1 which is 2nd array below first ARRAY
+
+import numpy
+
+inp = tuple(map(int,input().split(' ')))
+
+arr1 = numpy.zeros(inp,int)
+print(arr1)
+arr2 = numpy.ones(inp,int)
+print(arr2)
+
+
+zeros and ones uses tuple
+
+
+import numpy
+
+l= input().split();
+n=int(l[0])
+m=int(l[1])
+i=0
+li=[]
+j=0
+k=0
+li2=[]
+while i<n:
+    li.append(input().split())
+    i+=1
+while j<n:
+    while k<m:
+        li2.append(int(li[j][k]))
+        k+=1
+    j+=1
+    k=0
+arr = numpy.array(li,int)
+arr2= numpy.array(li2)
+arr3=numpy.transpose(arr)
+print(arr3)
+print(arr2)
+
+import numpy
+
+change_array = numpy.array([1,2,3,4,5,6])
+change_array.shape = (3, 2)
+print change_array      
+
+#Output
+[[1 2]
+[3 4]
+[5 6]]
+
+
+reshape(array,tuple)
+
+import numpy
+
+change_array = numpy.array([1,2,3,4,5,6])
+change_array.shape = (3, 2)
+print change_array      
+
+#Output
+[[1 2]
+[3 4]
+[5 6]]
+
+import numpy
+
+my_array = numpy.array([1,2,3,4,5,6])
+print numpy.reshape(my_array,(3,2))
+
+#Output
+[[1 2]
+[3 4]
+[5 6]]
+
+
+numpy.dot(arr1,arr2)
+numpy.cross(arr1,arr2)
+
+
+
+
+
+cmath
+
+
+
+complex()
+cmath.phase()
+abs()
+
+
+
+
+
+import math
+a=int(input())
+b=int(input())
+c=math.sqrt(a**2 + b**2)
+d = c/2
+e = d/b
+l=int(math.degrees(math.asin(e)))
+print(f'{l}\u00B0')
+
+
+
+sin
+cos
+tan
+asin
+acos
+atan
+sqrt
+degrees
+radaians
+\u00B0 for degree symbol
+
+
+
+
+
+Hi Kritika, this is Ankur & I am an Associate consultant @ Capgemini. I am looking for new opportunities in the reputed Apple community. I would like to connect & inquire about suitable opportunities. I welcome you to review my resume on my profile. Regards Ankur(7013882031)
+
+
+input file
+regular expression and then we use to join the files
+rollup
+
+
+x=datetime.datetime()
+x.strftime("%A")
+%a,%A week
+%b,%B month
+%Z timezone
+%z utf
+%d day of month
+%Y full year
+%p pm am
+
+
+re.search
+re.findall
+re.split
+re.sub
+
+^ starts with
+$ ends with
+... exactly one charector except new line
+{3} exact those many number of occurences
+\
+| or
++ one or more
+* zero or more
+[] range of char
+
+
+
+
+elt
+
+
+iam taking in data
+data cleansing ----duplicates removed, mean mode median, select, date format changed, number limit checked
+data pattern matching ----
+data quality check----
+data tokenization
+load
+business check
+data manipulation
+aws s3 file in json format
+s3 to snowflake automation using sqs
+lambda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pythoon
+python modules
+datastructures
+regresion classification
+aws
+automation in python
+
+
+
+taking from csv pdf json type of files
+daataa checks, data manipulation, data duplicate check, business check, calculation
+loading into sql
+joining in sql
+putting it in aws
+
+
+
